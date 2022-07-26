@@ -11,11 +11,11 @@ if($_POST){
     $ivaCantidad = $precioConIva - $precioSinIva;
 
     if($precioSinIva > 0){
-        $precioConIva = $precioSinIva / (21 /100 +1);
+        $precioConIva = $precioSinIva * (21 /100 +1);
 
     }
     if($precioConIva > 0) {
-        $precioSinIva = $precioConIva * (21 / 100 + 1);
+        $precioSinIva = $precioConIva / (21 / 100 + 1);
     } 
 
 }
@@ -24,7 +24,7 @@ if($_POST){
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
