@@ -10,14 +10,10 @@ if($_POST){
   $nombreUsuario = trim($_REQUEST["txtUsuario"]);
   $clave = trim($_REQUEST["txtClave"]);
 
-  //Si el usuario es admin y la clave es admin123
-  $entidadUsuario = new Usuario();
-  $entidadUsuario->obtenerPorUsuario($nombreUsuario);
-
-  if($entidadUsuario->usuario == $nombreUsuario && password_verify($clave, $entidadUsuario->clave)){
-    $_SESSION["nombre"] = $entidadUsuario->nombre . " " . $entidadUsuario->apellido;
-    header("Location: index.php");
-  } else {
+  if($nombreUsuario == "admin" && $clave == "admin123"){
+      $_SESSION["nombre"] = "Maxi";
+      header('Location:index.php');
+  }else{
     $msg = "Usuario o clave incorrecto";
   }
 }
