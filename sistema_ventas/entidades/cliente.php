@@ -166,6 +166,7 @@ class Cliente
         }
 
         $aResultado = array();
+
         if($resultado){
             //Convierte el resultado en un array asociativo
 

@@ -1,5 +1,16 @@
 <?php
 
+if (!isset($_SESSION["nombre"])){
+  header("Location: login.php");
+}
+if ($_POST) {
+    if (isset($_POST["btnCerrar"])) {
+        if (isset($_SESSION["nombre"])) {
+            session_destroy();
+            header("Location: login.php");
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +62,7 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    <?php include_once("menu.php"); ?>
+    <?php include_once "menu.php";?>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -76,11 +87,11 @@
                 </button>
               </div>
             </div>
-       
+
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
-     
+
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
